@@ -1,0 +1,13 @@
+// Default variables
+$primary-color: 'rgb(150, 150, 0)';
+
+// Login Screen
+.__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .__container {
+    border: 1px solid red;
+  }
+}
