@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
-import HomeScreen from './routes/HomeScreen';
+import HomeScreen from './routes/HomeScreen/HomeScreen';
+import LoginScreen from './routes/LoginScreen/LoginScreen';
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/" exact={true} component={App} />
+      <Route path="/login" exact={true} component={LoginScreen} />
       <Route path="/home" component={HomeScreen} />
     </Switch>
   </Router>,
