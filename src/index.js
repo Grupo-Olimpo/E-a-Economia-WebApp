@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import HomeScreen from './routes/HomeScreen/HomeScreen';
@@ -8,6 +8,7 @@ import LoginScreen from './routes/LoginScreen/LoginScreen';
 
 ReactDOM.render(
   <Router>
+      <Redirect to="/login" />
     <Switch>
       <Route path="/login" exact={true} component={LoginScreen} />
       <Route path="/home" component={HomeScreen} />
