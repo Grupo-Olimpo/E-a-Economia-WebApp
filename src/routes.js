@@ -1,8 +1,11 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+
+import history from './history';
 
 import { isAuthenticated } from "./services/auth";
-import TelaLogin from "./containers/TelaLogin";
+import TelaLogin from "./containers/login";
+import TelaCadastro from "./containers/cadastro";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -11,21 +14,21 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       isAuthenticated() ? (
         <Component {...props} />
       ) : (
-        <Redirect to={{ pathname: "/", state: { from: props.location } }} />
-      )
+          <Redirect to={{ pathname: "/loginIn", state: { from: props.location } }} />
+        )
     }
   />
 );
 
 const Routes = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <Switch>
-      <Route path="/" component={TelaLogin} />
-      <Route path="/signup" component={() => <h1>SignUp</h1>} />
+      <Route path="/loginIn" component={TelaLogin} />
+      <Route path="/signIn" component={TelaCadastro} />
       <PrivateRoute path="/app" component={() => <h1>App</h1>} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default Routes;
