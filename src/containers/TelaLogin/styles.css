@@ -1,0 +1,36 @@
+// Login Screen
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.MuiOutlinedInput-root {
+  margin-top: 40px;
+}
+
+.title {
+  margin: 20px 0 30px 0;
+  text-align: center;
+  font-size: 25px;
+  color: #555;
+}
+
+.sign-in__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  
+  button {
+    background-color: transparent;
+    border: 0;
+  }
+}
