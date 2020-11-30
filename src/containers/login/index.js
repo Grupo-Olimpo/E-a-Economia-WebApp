@@ -31,6 +31,8 @@ export default class TelaLogin extends Component {
     if (response) {
       console.log(form);
       alert('Conta criada com sucesso!');
+    } else {
+      alert('Conta não criada!');
     }
   }
 
