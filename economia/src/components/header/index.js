@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Fade } from "react-reveal";
+import LogoImagem from '../../assets/logo.jpg';
 
 function Header() {
     return (
@@ -8,9 +9,8 @@ function Header() {
             <div>
                 <header className="header">
                     <a href="" className="logo">
-                        <span className="grey-color"> &lt;</span>
+                        <img src={LogoImagem} className="logo_imagem" />
                         <span className="logo-name">E-conomia</span>
-                        <span className="grey-color">/&gt;</span>
                     </a>
                 </header>
             </div>
