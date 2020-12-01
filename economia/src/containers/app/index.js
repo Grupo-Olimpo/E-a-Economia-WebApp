@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Skeleton } from '@material-ui/core';
-
+import "./styles.css";
+import { Fade } from "react-reveal";
+import {Button} from '@material-ui/core'
 import Header from '../../components/header'
 import Transacao from '../../components/transacao'
-import BotaoTransacao from '../../components/botao_transacao'
+import history from '../../history';
 
 
 export default class App extends Component {
@@ -66,6 +67,9 @@ export default class App extends Component {
         return (
             <div>
                 <Header />
+                < Fade top duration={1000} distance="20px" >
+                    <Button onClick={() => {history.push('/criar-transacao') }}><i class="fas fa-plus"></i></Button>
+                </Fade >
                 {this.transacaoDetails.map(experience => {
                     return (
                         <Transacao
@@ -78,7 +82,6 @@ export default class App extends Component {
                         />
                     );
                 })}
-                    < BotaoTransacao />
             </div>
         );
     }

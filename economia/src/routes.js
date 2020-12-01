@@ -7,6 +7,7 @@ import { isAuthenticated } from "./services/auth";
 import TelaLogin from "./containers/login";
 import TelaCadastro from "./containers/cadastro";
 import App from "./containers/app";
+import CriarTransacao from './containers/criar_transacao'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -27,6 +28,7 @@ const Routes = () => (
       <Route path="/loginIn" component={TelaLogin} />
       <Route path="/signIn" component={TelaCadastro} />
       <Route path="/app" component={App} />
+      <Route path='/criar-transacao' component={CriarTransacao}/>
     </Switch>
   </Router>
 );
