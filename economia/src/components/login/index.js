@@ -8,7 +8,7 @@ export default class FormLogin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loginDetails: this.props.loginDetails,
+            loginDetails: this.props.loginDetails || '',
             name: '',
             email: '',
             password: '',
@@ -26,6 +26,14 @@ export default class FormLogin extends Component {
     onSubmitForm() {
         this.props.onFormSubmit(this.state)
     }
+
+    handleClick() {
+        if (this.state.loginDetails.cadastro === true )
+            history.push('/loginIn') 
+        else 
+            history.push('/signIn')
+    }
+    
 
     render() {
         return (
@@ -58,27 +66,24 @@ export default class FormLogin extends Component {
                             type="password"
                             required={true}
                         />
-                    </div>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        endIcon={<ArrowRightIcon />}
-                        onClick={() => this.onSubmitForm()}
-                    >
-                        {this.state.loginDetails.cadastro === true ?
-                            'Cadastrar' :
-                            'Entrar'}
-                    </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            endIcon={<ArrowRightIcon />}
+                            onClick={() => this.onSubmitForm()}
+                        >
+                            {this.state.loginDetails.cadastro === true ?
+                                'Cadastrar' :
+                                'Entrar'}
+                        </Button>
 
-                    <Button
-                        onClick={() =>
-                            this.state.loginDetails.cadastro === true ?
-                            history.push('/loginIn') :
-                            history.push('/signIn')} >
-                        {this.state.loginDetails.cadastro === true ?
-                            'Voltar ao login' :
-                            'Cadastre-se aqui'}
-                    </Button>
+                        <Button
+                            onClick={() => this.handleClick()} >
+                            {this.state.loginDetails.cadastro === true ?
+                                'Voltar ao login' :
+                                'Cadastre-se aqui'}
+                        </Button>
+                    </div>
 
                 </form>
             </div>

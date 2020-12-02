@@ -14,7 +14,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       isAuthenticated() ? (
         <Component {...props} />
       ) : (
-          <Redirect to={{ pathname: "/loginIn", state: { from: props.location } }} />
+          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
         )
     }
   />
@@ -26,7 +26,6 @@ const Routes = () => (
       <Route path="/loginIn" component={TelaLogin} />
       <Route path="/signIn" component={TelaCadastro} />
       <PrivateRoute path="/app" component={() => <h1>App</h1>} />
-      <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
   </Router>
 );
