@@ -27,7 +27,7 @@ export default class LoginScreen extends Component {
     console.log(form);
 
     //send data to API
-    const response = fetch('http://localhost:5000/api/cadastro', {
+    const response = fetch(`${process.env.REACT_APP_APIURL}/cadastro`, {
       method: "POST", 
       headers: {
         'Accept': 'application/json',
