@@ -14,13 +14,13 @@ export default class TelaLogin extends Component {
   }
 
   async loginInUser(values) {
-    const { name, email, password } = values;
+    const { email, password } = values;
     const form = {
       email,
       password
     }
     //envia informação para o back
-    const response = fetch('http://localhost:8080/api/user', {
+    const response = fetch(`${process.env.REACT_APP_APIURL}/login`, {
       method: "POST",
       headers: {
         'Accept': 'application/json',
@@ -30,9 +30,9 @@ export default class TelaLogin extends Component {
     });
     if (response) {
       console.log(form);
-      alert('Conta criada com sucesso!');
+      alert('Login realizado com sucesso!');
     } else {
-      alert('Conta não criada!');
+      alert('Falha no Login');
     }
   }
 

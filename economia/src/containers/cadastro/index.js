@@ -22,7 +22,7 @@ export default class TelaCadastro extends Component {
       password
     }
     //envia informação para o back
-    const response = fetch('http://localhost:8080/api/user', {
+    const response = fetch(`${process.env.REACT_APP_APIURL}/cadastro`, {
       method: "POST",
       headers: {
         'Accept': 'application/json',

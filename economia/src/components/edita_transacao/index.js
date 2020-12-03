@@ -20,7 +20,7 @@ export default class EditaTransacao extends Component {
     async editaTransacao(values) {
         const { nome, descricao, data, valor } = values;
         //envia informação para o back
-        const response = fetch('http://localhost:8080/api/user', {
+        const response = fetch(`${process.env.REACT_APP_APIURL}/transaction`, {
             method: "PUT",
             headers: {
                 'Accept': 'application/json',
