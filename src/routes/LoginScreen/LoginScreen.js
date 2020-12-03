@@ -27,7 +27,7 @@ export default class LoginScreen extends Component {
     console.log(form);
 
     //send data to API
-    const response = fetch('http://localhost:8080/api/user', {
+    const response = fetch('http://localhost:5000/api/cadastro', {
       method: "POST", 
       headers: {
         'Accept': 'application/json',
@@ -45,7 +45,7 @@ export default class LoginScreen extends Component {
     return (
       <div class="login">
         <div class="login__container">
-          <img src={LoginImage} width='400' />
+          <img src={LoginImage} width='400' alt='LoginImage'/>
   
           <div class="title">{!this.state.showingSignIn ? 'E a Economia?' : 'Insira seus dados'}</div>
   
